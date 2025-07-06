@@ -1,6 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:privilee_assesment/core/config/router/app_router.dart';
+import 'package:privilee_assesment/core/config/theme/app_theme.dart';
+import 'package:privilee_assesment/core/di/dependency_injection.dart' as di;
 
 void main() {
+  WidgetsFlutterBinding.ensureInitialized();
+  di.init();
+
   runApp(const MainApp());
 }
 
@@ -9,12 +15,10 @@ class MainApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      home: Scaffold(
-        body: Center(
-          child: Text('Hello World!'),
-        ),
-      ),
+    return MaterialApp.router(
+      title: 'Privilee',
+      theme: AppTheme.getTheme(),
+      routerConfig: goRouter,
     );
   }
 }

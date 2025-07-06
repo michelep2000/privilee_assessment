@@ -1,0 +1,15 @@
+import 'package:flutter/material.dart';
+import 'package:privilee_assesment/core/resources/app_colors.dart';
+import 'package:privilee_assesment/features/venues/presentation/components/venues_view.dart';
+
+class VenuesPage extends StatelessWidget {
+  const VenuesPage({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+        backgroundColor: AppColors.primaryColor,
+        body: VenuesView(),
+      );
+  }
+}
